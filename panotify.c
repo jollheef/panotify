@@ -75,9 +75,9 @@ notify(IN PurpleConversation *conv)
 {
 	const char *cmd = purple_prefs_get_string("/plugins/core/panotify/command");
 
-	execute(cmd);
-
 	if (get_unseen_count(conv) > 0) {
+		execute(cmd);
+
 		return TRUE;
 	}
 	else {
