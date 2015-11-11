@@ -20,8 +20,8 @@
  * @return объект интерфейса плагина.
  */
 static
-PurplePluginPrefFrame*
-plugin_pref_frame(IN PurplePlugin* plugin);
+PurplePluginPrefFrame *
+plugin_pref_frame(IN PurplePlugin *plugin);
 
 /**
  * Точка входа при загрузке плагина.
@@ -31,7 +31,7 @@ plugin_pref_frame(IN PurplePlugin* plugin);
  */
 static
 gboolean
-plugin_load(IN  PurplePlugin* plugin);
+plugin_load(IN  PurplePlugin *plugin);
 
 /**
  * Деинициализация плагина.
@@ -41,49 +41,49 @@ plugin_load(IN  PurplePlugin* plugin);
  */
 static
 gboolean
-plugin_unload(IN PurplePlugin* plugin);
+plugin_unload(IN PurplePlugin *plugin);
 
 /**
- * Настройки плагина 
+ * Настройки плагина
  */
 static PurplePluginUiInfo prefs_info = {
-  plugin_pref_frame,
-  0,
-  NULL,
-  NULL,
-  NULL,
-  NULL,
-  NULL
+	plugin_pref_frame,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
 };
 
 /**
  * Описание плагина.
  */
 static PurplePluginInfo info = {
-  PURPLE_PLUGIN_MAGIC,
-  PURPLE_MAJOR_VERSION,
-  PURPLE_MINOR_VERSION,
-  PURPLE_PLUGIN_STANDARD,
-  NULL,				/* наличие интерфейса */
-  0,				/* флаги */
-  NULL,				/* зависимости */
-  PURPLE_PRIORITY_DEFAULT,
+	PURPLE_PLUGIN_MAGIC,
+	PURPLE_MAJOR_VERSION,
+	PURPLE_MINOR_VERSION,
+	PURPLE_PLUGIN_STANDARD,
+	NULL,				/* наличие интерфейса */
+	0,				/* флаги */
+	NULL,				/* зависимости */
+	PURPLE_PRIORITY_DEFAULT,
 
-  "core-panotify",		/* id */
-  "panotify",			/* название */
-  "0.2",			/* версия */
+	"core-panotify",		/* id */
+	"panotify",			/* название */
+	"0.2",			/* версия */
 
-  "Advanced notify",		/* краткое описание */
-  "Advanced notify",		/* полное описание */
-  "Mikhail Klementyev <jollheef@riseup.net>", /* автор */
-  NULL,					      /* домашняя страница */
+	"Advanced notify",		/* краткое описание */
+	"Advanced notify",		/* полное описание */
+	"Mikhail Klementyev <jollheef@riseup.net>", /* автор */
+	NULL,					      /* домашняя страница */
 
-  plugin_load,			/* обработчик загрузки */
-  plugin_unload,		/* обработчик выгрузки */
-  NULL,				/* обработчик уничтожения */
+	plugin_load,			/* обработчик загрузки */
+	plugin_unload,		/* обработчик выгрузки */
+	NULL,				/* обработчик уничтожения */
 
-  NULL,				/* ui_info */
-  NULL,				/* extra_info */
-  &prefs_info,			/* prefs_info */
-  NULL				/* actions */
+	NULL,				/* ui_info */
+	NULL,				/* extra_info */
+	&prefs_info,			/* prefs_info */
+	NULL				/* actions */
 };
